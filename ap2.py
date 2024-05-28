@@ -32,7 +32,7 @@ def consultar_e_inserir_endereco(cep):
     if resposta.status_code == 200:
         data = resposta.json()
         
-        # Verifica se o CEP já existe no banco de dados
+#Verifica se o CEP já existe no banco de dados
         endereco_existente = session.query(Endereco).filter_by(cep=cep).first()
         if endereco_existente:
             print("O endereço com o CEP", cep, "já existe no banco de dados. Pulando para o próximo CEP...")
